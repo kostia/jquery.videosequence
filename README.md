@@ -3,6 +3,10 @@ jquery.videosequence
 
 jQuery plugin for creating a video sequence with media source extensions.
 
+## Prerequisites
+
+To avoid stress, please read before using http://wiki.webmproject.org/adaptive-streaming/instructions-to-playback-a-webm-dash-presentation.
+
 ## Installation
 
 ```
