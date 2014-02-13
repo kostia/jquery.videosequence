@@ -1,0 +1,27 @@
+{
+  "name": "jquery.videosequence",
+  "version": "0.0.1",
+  "authors": [
+    "Kostiantyn Kahanskyi <kostiantyn.kahanskyi@googlemail.com>"
+  ],
+  "description": "jQuery plugin for creating a video sequence with media source extensions",
+  "main": "jquery.videosequence.js",
+  "keywords": [
+    "jquery",
+    "media",
+    "source",
+    "extensions",
+    "mse",
+    "video",
+    "sequence"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kostia/jquery.videosequence",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
