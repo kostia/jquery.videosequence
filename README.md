@@ -1,7 +1,7 @@
 jquery.videosequence
 ====================
 
-jQuery plugin for creating a video sequence with media source extensions.
+jQuery plugin for creating a video sequence with [media source extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html).
 
 ## Prerequisites
 
