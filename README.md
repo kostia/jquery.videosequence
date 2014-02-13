@@ -5,9 +5,9 @@ jQuery plugin for creating a video sequence with media source extensions.
 
 ## Installation
 
-´´´
+```
 bower install jquery.videosequence
-´´´
+```
 
 ## Usage
 
