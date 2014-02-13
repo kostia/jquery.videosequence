@@ -6,6 +6,9 @@
   ],
   "description": "jQuery plugin for creating a video sequence with media source extensions",
   "main": "jquery.videosequence.js",
+  "dependencies": {
+    "jquery": ">=1.6.3"
+  },
   "keywords": [
     "jquery",
     "media",
