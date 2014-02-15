@@ -32,9 +32,9 @@ $(function() {
     });
   };
 
-  var addSourcesToMediaSource = function(mediaSource, specs) {
+  var addSourcesToMediaSource = function(mediaSource, specs, mimeType) {
     mediaSource.addEventListener('sourceopen', function() {
-      var sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vorbis,vp8"');
+      var sourceBuffer = mediaSource.addSourceBuffer(mimeType);
 
       var initialSpec = specs.shift();
       var initialSource = initialSpec.source;
@@ -54,13 +54,17 @@ $(function() {
     });
   };
 
-  var addSourcesToVideo = function(video, specs) {
+  var addSourcesToMediaElement = function(mediaElement, specs, mimeType) {
     var mediaSource = new MediaSource();
-    video.src = window.URL.createObjectURL(mediaSource);
-    addSourcesToMediaSource(mediaSource, specs);
+    mediaElement.src = window.URL.createObjectURL(mediaSource);
+    addSourcesToMediaSource(mediaSource, specs, mimeType);
   };
 
   $.fn.videosequence = function(specs) {
-    addSourcesToVideo(this[0], specs);
+    addSourcesToMediaElement(this[0], specs, 'video/webm; codecs="vorbis,vp8"');
+  };
+
+  $.fn.audiosequence = function(specs) {
+    addSourcesToMediaElement(this[0], specs, 'audio/webm; codecs="vorbis"');
   };
 });

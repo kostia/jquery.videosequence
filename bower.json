@@ -1,10 +1,10 @@
 {
   "name": "jquery.videosequence",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Kostiantyn Kahanskyi <kostiantyn.kahanskyi@googlemail.com>"
   ],
-  "description": "jQuery plugin for creating a video sequence with media source extensions",
+  "description": "jQuery plugin for creating video and audio sequences with media source extensions",
   "main": "jquery.videosequence.js",
   "dependencies": {
     "jquery": ">=1.6.3"

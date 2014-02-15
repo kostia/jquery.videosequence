@@ -1,7 +1,7 @@
 jquery.videosequence
 ====================
 
-jQuery plugin for creating a video sequence with [media source extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html).
+jQuery plugin for creating video and audio sequences with [media source extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html).
 
 ## Prerequisites
 
@@ -20,6 +20,12 @@ $('video').videosequence([
   {source: 'xxx-0s-3s.webm', timestampOffset: 0},
   {source: 'xxx-3s-6s.webm', timestampOffset: 3},
   {source: 'xxx-6s-9s.webm', timestampOffset: 6}
+]);
+
+$('audio').audiosequence([
+  {source: 'zzz-0s-3s.webm', timestampOffset: 0},
+  {source: 'zzz-3s-6s.webm', timestampOffset: 3},
+  {source: 'zzz-6s-9s.webm', timestampOffset: 6}
 ]);
 ```
 
