@@ -60,11 +60,19 @@ $(function() {
     addSourcesToMediaSource(mediaSource, specs, mimeType);
   };
 
+  var assertTagName = function(jqueryElement, methodName, tagName) {
+    if (jqueryElement.prop('tagName') !== tagName) {
+      $.error('Called $.' + methodName + ' on a non ' + tagName + ' tag.');
+    }
+  };
+
   $.fn.videosequence = function(specs) {
+    assertTagName(this, 'videosequence', 'VIDEO');
     addSourcesToMediaElement(this[0], specs, 'video/webm; codecs="vorbis,vp8"');
   };
 
   $.fn.audiosequence = function(specs) {
+    assertTagName(this, 'audiosequence', 'AUDIO');
     addSourcesToMediaElement(this[0], specs, 'audio/webm; codecs="vorbis"');
   };
 });
