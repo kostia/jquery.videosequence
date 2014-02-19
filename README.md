@@ -62,6 +62,8 @@ node app.js
 
 * Open [http://localhost:3000](http://localhost:3000) in a browser supporting media source extensions. You should see a movie counter starting with 5 and counting down to 1 (the "1" is not actually displayed, but an empty square instead).
 
+![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png)
+
 ## MIT-License
 
 Copyright 2014 Kostiantyn Kahanskyi
