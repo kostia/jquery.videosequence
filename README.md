@@ -1,6 +1,8 @@
 jquery.videosequence
 ====================
 
+![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png)
+
 jQuery plugin for creating video and audio sequences with [media source extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html).
 
 ## Prerequisites
