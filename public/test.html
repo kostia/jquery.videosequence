@@ -8,18 +8,29 @@
     <script type="text/javascript">
       $(function() {
         $('video').videosequence([
-          {source: '5.webm', timestampOffset: 0},
-          {source: '4.webm', timestampOffset: 1},
-          {source: '3.webm', timestampOffset: 2},
-          {source: '2.webm', timestampOffset: 3},
-          {source: '1.webm', timestampOffset: 4}
+          {source: 'video-5.webm', timestampOffset: 0},
+          {source: 'video-4.webm', timestampOffset: 1},
+          {source: 'video-3.webm', timestampOffset: 2},
+          {source: 'video-2.webm', timestampOffset: 3},
+          {source: 'video-1.webm', timestampOffset: 4}
         ]).on('ended', function() {
-          window.alert('Boom!');
+          window.alert('Now audio!');
+
+          $('audio').audiosequence([
+            {source: 'audio-5.webm', timestampOffset: 0},
+            {source: 'audio-4.webm', timestampOffset: 1},
+            {source: 'audio-3.webm', timestampOffset: 2},
+            {source: 'audio-2.webm', timestampOffset: 3},
+            {source: 'audio-1.webm', timestampOffset: 4}
+          ]).on('ended', function() {
+            window.alert('Done!');
+          });
         });
       });
     </script>
   </head>
   <body>
     <video controls autoplay></video>
+    <audio controls autoplay></audio>
   </body>
 </html>
