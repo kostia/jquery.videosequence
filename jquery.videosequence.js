@@ -48,6 +48,8 @@ $(function() {
             var timestampOffset = spec.timestampOffset;
 
             addSourceToBuffer(sourceBuffer, source, timestampOffset);
+          } else {
+            mediaSource.endOfStream();
           }
         });
       });
