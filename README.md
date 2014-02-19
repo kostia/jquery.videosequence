@@ -17,15 +17,15 @@ bower install jquery.videosequence
 
 ```javascript
 $('video').videosequence([
-  {source: 'xxx-0s-3s.webm', timestampOffset: 0},
-  {source: 'xxx-3s-6s.webm', timestampOffset: 3},
-  {source: 'xxx-6s-9s.webm', timestampOffset: 6}
+  {source: '/video-1.webm', timestampOffset: 0},
+  {source: '/video-2.webm', timestampOffset: 10},
+  {source: '/video-3.webm', timestampOffset: 20}
 ]);
 
 $('audio').audiosequence([
-  {source: 'zzz-0s-3s.webm', timestampOffset: 0},
-  {source: 'zzz-3s-6s.webm', timestampOffset: 3},
-  {source: 'zzz-6s-9s.webm', timestampOffset: 6}
+  {source: '/audio-1.webm', timestampOffset: 0},
+  {source: '/audio-2.webm', timestampOffset: 10},
+  {source: '/audio-3.webm', timestampOffset: 20}
 ]);
 ```
 
