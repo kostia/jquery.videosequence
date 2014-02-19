@@ -29,6 +29,39 @@ $('audio').audiosequence([
 ]);
 ```
 
+## Test
+
+* Install Node.js
+
+```bash
+# For example with Homebrew (http://brew.sh/)
+brew install nodejs
+```
+
+* Install NPM modules
+
+```bash
+# In jquery.videosequence
+npm install
+npm install -g bower
+```
+
+* Install Bower components
+
+```bash
+# In jquery.videosequence
+bower install
+```
+
+* Start test app server
+
+```bash
+# In jquery.videosequence
+node app.js
+```
+
+* Open [http://localhost:3000](http://localhost:3000) in a browser supporting media source extensions. You should see a movie counter starting with 5 and counting down to 1 (the "1" is not actually displayed, but an empty square instead).
+
 ## MIT-License
 
 Copyright 2014 Kostiantyn Kahanskyi
