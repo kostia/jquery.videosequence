@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jquery.videosequence</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.videosequence.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('video').videosequence([
+          {source: '5.webm', timestampOffset: 0},
+          {source: '4.webm', timestampOffset: 1},
+          {source: '3.webm', timestampOffset: 2},
+          {source: '2.webm', timestampOffset: 3},
+          {source: '1.webm', timestampOffset: 4}
+        ]);
+      });
+    </script>
+  </head>
+  <body>
+    <video controls autoplay></video>
+  </body>
+</html>
