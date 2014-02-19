@@ -31,41 +31,44 @@ $('audio').audiosequence([
 ]);
 ```
 
-## Test
+## Testing
 
-* Install Node.js
+### Setup
+
+* Install Node.js. For example with Homebrew (http://brew.sh/).
 
 ```bash
-# For example with Homebrew (http://brew.sh/)
 brew install nodejs
 ```
 
 * Install NPM modules
 
 ```bash
-# In jquery.videosequence
 npm install
 npm install -g bower
+npm install -g jasmine-jquery
+npm install -g jasmine-node
 ```
 
 * Install Bower components
 
 ```bash
-# In jquery.videosequence
 bower install
 ```
 
-* Start test app server
+### Unit specs
 
 ```bash
-# In jquery.videosequence
-node app.js
+jasmine-node spec/
 ```
 
+### Integration tests
+
+* Start test app server with `node app.js`.
 * Open [http://localhost:3000](http://localhost:3000/test.html) in a browser supporting media source extensions.
-* You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert. 
+* You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert.
 * You should also hear the corresponding beeping sound.
-* Then after an alert saying "Now audio!" you should hear 5 times only the sound. 
+* Then after an alert saying "Now audio!" you should hear 5 times only the sound.
 * After the 5th beeping sound a second alerts says "Done!".
 
 ## MIT-License
