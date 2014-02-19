@@ -13,7 +13,9 @@
           {source: '3.webm', timestampOffset: 2},
           {source: '2.webm', timestampOffset: 3},
           {source: '1.webm', timestampOffset: 4}
-        ]);
+        ]).on('ended', function() {
+          window.alert('Boom!');
+        });
       });
     </script>
   </head>
