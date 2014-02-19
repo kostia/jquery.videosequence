@@ -60,9 +60,7 @@ bower install
 node app.js
 ```
 
-* Open [http://localhost:3000](http://localhost:3000/test.html) in a browser supporting media source extensions. You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert. You should also hear the corresponding beeping sound. It should look like this:
-
-![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png)
+* Open [http://localhost:3000](http://localhost:3000/test.html) in a browser supporting media source extensions. You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert. You should also hear the corresponding beeping sound. It should look like this: ![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png). Then after an alert you should hear 5 times only the sound. After the 5th beeping sound a second alerts says "Done!".
 
 ## MIT-License
 
