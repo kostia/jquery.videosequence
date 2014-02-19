@@ -66,13 +66,17 @@ $(function() {
     }
   };
 
+  var createSequence = function(tagName, jqueryElement, specs, codecInfo) {
+    assertTagName(jqueryElement, tagName + 'sequence', tagName.toUpperCase());
+    addSourcesToMediaElement(jqueryElement[0], specs, codecInfo);
+    return jqueryElement;
+  };
+
   $.fn.videosequence = function(specs) {
-    assertTagName(this, 'videosequence', 'VIDEO');
-    addSourcesToMediaElement(this[0], specs, 'video/webm; codecs="vorbis,vp8"');
+    return createSequence('video', this, specs, 'video/webm; codecs="vorbis,vp8"');
   };
 
   $.fn.audiosequence = function(specs) {
-    assertTagName(this, 'audiosequence', 'AUDIO');
-    addSourcesToMediaElement(this[0], specs, 'audio/webm; codecs="vorbis"');
+    return createSequence('audio', this, specs, 'audio/webm; codecs="vorbis"');
   };
 });
