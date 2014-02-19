@@ -1,9 +1,11 @@
 jquery.videosequence
 ====================
 
-![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png)
+[![Build Status](https://travis-ci.org/kostia/jquery.videosequence.png)](https://travis-ci.org/kostia/jquery.videosequence)
 
 jQuery plugin for creating video and audio sequences with [media source extensions](https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html).
+
+![Counter](https://raw.github.com/kostia/jquery.videosequence/master/counter.png)
 
 ## Prerequisites
 
