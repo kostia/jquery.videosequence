@@ -1,4 +1,4 @@
-$(function() {
+;(function() {
   var loadFileFromSource = function(source, next) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', source, true);
@@ -81,4 +81,4 @@ $(function() {
   $.fn.audiosequence = function(specs) {
     return createSequence('audio', this, specs, 'audio/webm; codecs="vorbis"');
   };
-});
+})();
