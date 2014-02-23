@@ -33,6 +33,18 @@ $('audio').audiosequence([
 ]);
 ```
 
+Or with `data-*` attributes:
+
+```html
+<video data-rel="videosequence"
+    data-videosequence-sources="[\"video-1.webm\",\"video-2.webm\",\"video-3.webm\"]"
+    data-videosequence-offsets="[0,10,20]"></video>
+
+<audio data-rel="audiosequence"
+    data-audiosequence-sources="[\"audio-1.webm\",\"audio-2.webm\",\"audio-3.webm\"]"
+    data-audiosequence-offsets="[0,10,20]"></video>
+```
+
 ## Testing
 
 ### Setup

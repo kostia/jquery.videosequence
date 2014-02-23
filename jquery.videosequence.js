@@ -68,6 +68,23 @@
     }
   };
 
+  var parseDataAttr = function(jqueryElement, dataAttrPrefix, attrName) {
+    return JSON.parse(jqueryElement.attr(dataAttrPrefix + attrName));
+  };
+
+  var parseSpecsFromDataAttrs = function(tagName, jqueryElement) {
+    var dataAttrPrefix = 'data-' + tagName + 'sequence-';
+    var sources = parseDataAttr(jqueryElement, dataAttrPrefix, 'sources');
+    var offsets = parseDataAttr(jqueryElement, dataAttrPrefix, 'offsets');
+
+    var specs = [];
+    $.each(sources, function(index, source) {
+      var timestampOffset = offsets[index];
+      specs.push({source: source, timestampOffset: timestampOffset});
+    });
+    return specs;
+  };
+
   var createSequence = function(tagName, jqueryElement, specs, codecInfo) {
     assertTagName(jqueryElement, tagName + 'sequence', tagName.toUpperCase());
     addSourcesToMediaElement(jqueryElement[0], specs, codecInfo);
@@ -81,4 +98,24 @@
   $.fn.audiosequence = function(specs) {
     return createSequence('audio', this, specs, 'audio/webm; codecs="vorbis"');
   };
+
+  var initializeMediasequencesFor = function(tagName) {
+    var sequenceName = tagName + 'sequence';
+    $.each($('[data-rel="' + tagName + 'sequence"]'), function(index, domElement) {
+      var jqueryElement = $(domElement);
+      var specs = parseSpecsFromDataAttrs(tagName, jqueryElement);
+      jqueryElement[sequenceName].call(jqueryElement, specs);
+    });
+  };
+
+  var initializeMediasequences = function() {
+    initializeMediasequencesFor('video');
+    initializeMediasequencesFor('audio');
+  };
+
+  $(initializeMediasequences);
+
+  // Test purpose only.
+  $(document).on('videosequence:initialize', initializeMediasequences);
+  $(document).on('audiosequence:initialize', initializeMediasequences);
 })(jQuery);
