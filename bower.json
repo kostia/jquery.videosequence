@@ -5,7 +5,6 @@
     "Kostiantyn Kahanskyi <kostiantyn.kahanskyi@googlemail.com>"
   ],
   "description": "jQuery plugin for creating video and audio sequences with media source extensions",
-  "main": "jquery.videosequence.js",
   "dependencies": {
     "jquery": ">=1.8.3"
   },
