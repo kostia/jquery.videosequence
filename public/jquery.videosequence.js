@@ -1,1 +1,0 @@
-../jquery.videosequence.js

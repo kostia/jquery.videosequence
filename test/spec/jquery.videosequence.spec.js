@@ -4,7 +4,7 @@ jQuery = require('jquery');
 $ = jQuery;
 jqueryJasmine = require('jasmine-jquery');
 
-require('../jquery.videosequence');
+require('../../jquery.videosequence');
 
 describe('$.videosequence, $.audiosequence', function() {
   beforeEach(function() {

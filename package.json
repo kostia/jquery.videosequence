@@ -13,6 +13,6 @@
     "jsdom": "~0.10.1"
   },
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "jasmine-node test/spec"
   }
 }

@@ -58,14 +58,15 @@ npm install -g jasmine-node
 bower install
 ```
 
-### Unit specs
+### Specs
 
 ```bash
-jasmine-node spec/
+jasmine-node test/spec/
 ```
 
-### Integration tests
+### Integration
 
+* Go to `test/integration`.
 * Start test app server with `node app.js`.
 * Open [http://localhost:3000](http://localhost:3000/test.html) in a browser supporting media source extensions.
 * You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert.
