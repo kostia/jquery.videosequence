@@ -73,6 +73,13 @@ jasmine-node spec/
 * Then after an alert saying "Now audio!" you should hear 5 times only the sound.
 * After the 5th beeping sound a second alerts says "Done!".
 
+## Building
+
+```bash
+npm install -g gulp
+gulp build
+```
+
 ## MIT-License
 
 Copyright 2014 Kostiantyn Kahanskyi
