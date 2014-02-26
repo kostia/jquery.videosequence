@@ -82,11 +82,20 @@ bower install
 
 ### Specs
 
+The unit specs are run in the Tranis-CI.
+Please make sure they all pass before submitting a pull-request.
+
 ```bash
 jasmine-node test/spec/
 ```
 
 ### Integration
+
+Since MSE is still a  bleeding edge technology, there is no way to actually assert that it works,
+except to try it out in a browser.
+
+The integration specs are __not__ run in the Tranis-CI.
+Please make sure they all pass in your browser before submitting a pull-request.
 
 * Go to `test/integration`.
 * Start test app server with `node app.js`.
