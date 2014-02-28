@@ -61,6 +61,10 @@
   };
 
   var addSourcesToMediaElement = function(mediaElement, specs, mimeType) {
+    if (specs.length === 0) {
+      return console.warn('Trying to create mediasequence with empty specs.');
+    }
+
     var mediaSource = new window.MediaSource();
     mediaElement.src = window.URL.createObjectURL(mediaSource);
     addSourcesToMediaSource(mediaSource, specs, mimeType);

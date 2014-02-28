@@ -69,6 +69,16 @@ describe('$.videosequence, $.audiosequence', function() {
     }).toThrow('Tried to create a mediasequence with a spec missing "source" key.');
   });
 
+  it('prints a warning if called with no empty specs', function() {
+    spyOn(console, 'warn');
+
+    $('#video-with-no-specs').videosequence([]);
+    expect(console.warn).toHaveBeenCalledWith('Trying to create mediasequence with empty specs.');
+
+    $('#audio-with-no-specs').audiosequence([]);
+    expect(console.warn).toHaveBeenCalledWith('Trying to create mediasequence with empty specs.');
+  });
+
   describe('with data-attrs', function() {
     beforeEach(function() {
       spyOn($.prototype, 'videosequence');
