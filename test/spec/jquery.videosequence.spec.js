@@ -8,6 +8,18 @@ require('../../jquery.videosequence');
 
 describe('$.videosequence, $.audiosequence', function() {
   beforeEach(function() {
+    window.MediaSource = function() {
+      this.addEventListener = function(eventName, callback) {
+        callback();
+      };
+
+      this.addSourceBuffer = function() {};
+    };
+
+    window.URL = {
+      createObjectURL: function() {}
+    };
+
     setFixtures(
       '<div id="jasmine-fixtures">' +
         '<video id="video-with-no-specs"></video>' +
@@ -45,6 +57,16 @@ describe('$.videosequence, $.audiosequence', function() {
     expect(function() {
       $('#audio-with-no-specs').audiosequence();
     }).toThrow('Called $.audiosequence with no specs given.');
+  });
+
+  it('raises an error if called with no invalid specs', function() {
+    expect(function() {
+      $('#video-with-no-specs').videosequence([{spam: 'eggs'}]);
+    }).toThrow('Tried to create a mediasequence with a spec missing "source" key.');
+
+    expect(function() {
+      $('#audio-with-no-specs').audiosequence([{spam: 'eggs'}]);
+    }).toThrow('Tried to create a mediasequence with a spec missing "source" key.');
   });
 
   describe('with data-attrs', function() {

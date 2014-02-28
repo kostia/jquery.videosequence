@@ -37,6 +37,8 @@
       var sourceBuffer = mediaSource.addSourceBuffer(mimeType);
 
       var initialSpec = specs.shift();
+      assertValidSpec(initialSpec);
+
       var initialSource = initialSpec.source;
       var initialTimestampOffset = initialSpec.timestampOffset;
 
@@ -44,6 +46,8 @@
         sourceBuffer.addEventListener('updateend', function() {
           if (specs.length > 0) {
             var spec = specs.shift();
+            assertValidSpec(spec);
+
             var source = spec.source;
             var timestampOffset = spec.timestampOffset;
 
@@ -57,7 +61,7 @@
   };
 
   var addSourcesToMediaElement = function(mediaElement, specs, mimeType) {
-    var mediaSource = new MediaSource();
+    var mediaSource = new window.MediaSource();
     mediaElement.src = window.URL.createObjectURL(mediaSource);
     addSourcesToMediaSource(mediaSource, specs, mimeType);
   };
@@ -71,6 +75,12 @@
   var assertSpecsGiven = function(specs, methodName) {
     if (!specs) {
       $.error('Called $.' + methodName + ' with no specs given.');
+    }
+  };
+
+  var assertValidSpec = function(spec) {
+    if (!spec.source) {
+      $.error('Tried to create a mediasequence with a spec missing "source" key.');
     }
   };
 
