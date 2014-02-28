@@ -68,6 +68,12 @@
     }
   };
 
+  var assertSpecsGiven = function(specs, methodName) {
+    if (!specs) {
+      $.error('Called $.' + methodName + ' with no specs given.');
+    }
+  };
+
   var parseDataAttr = function(jqueryElement, dataAttrPrefix, attrName) {
     return JSON.parse(jqueryElement.attr(dataAttrPrefix + attrName));
   };
@@ -86,7 +92,9 @@
   };
 
   var createSequence = function(tagName, jqueryElement, specs, codecInfo) {
-    assertTagName(jqueryElement, tagName + 'sequence', tagName.toUpperCase());
+    var methodName = tagName + 'sequence';
+    assertTagName(jqueryElement, methodName, tagName.toUpperCase());
+    assertSpecsGiven(specs, methodName);
     addSourcesToMediaElement(jqueryElement[0], specs, codecInfo);
     return jqueryElement;
   };

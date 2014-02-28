@@ -10,7 +10,11 @@ describe('$.videosequence, $.audiosequence', function() {
   beforeEach(function() {
     setFixtures(
       '<div id="jasmine-fixtures">' +
+        '<video id="video-with-no-specs"></video>' +
+        '<audio id="audio-with-no-specs"></audio>' +
+
         '<div id="wrong-tag"></div>' +
+
         '<video data-rel="videosequence"' +
           ' data-videosequence-sources=\'["video-1.webm","video-2.webm"]\'' +
           ' data-videosequence-offsets=\'[0,3]\'>' +
@@ -31,6 +35,16 @@ describe('$.videosequence, $.audiosequence', function() {
     expect(function() {
       $('#wrong-tag').audiosequence({});
     }).toThrow('Called $.audiosequence on a non AUDIO tag.');
+  });
+
+  it('raises an error if called with no specs', function() {
+    expect(function() {
+      $('#video-with-no-specs').videosequence();
+    }).toThrow('Called $.videosequence with no specs given.');
+
+    expect(function() {
+      $('#audio-with-no-specs').audiosequence();
+    }).toThrow('Called $.audiosequence with no specs given.');
   });
 
   describe('with data-attrs', function() {
