@@ -29,11 +29,11 @@ describe('$.videosequence, $.audiosequence', function() {
 
   it('raises an error if called on a wrong tag', function() {
     expect(function() {
-      $('#wrong-tag').videosequence({});
+      $('#wrong-tag').videosequence();
     }).toThrow('Called $.videosequence on a non VIDEO tag.');
 
     expect(function() {
-      $('#wrong-tag').audiosequence({});
+      $('#wrong-tag').audiosequence();
     }).toThrow('Called $.audiosequence on a non AUDIO tag.');
   });
 
