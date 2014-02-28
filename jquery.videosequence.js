@@ -115,7 +115,6 @@
 
   $(initializeMediasequences);
 
-  // Test purpose only.
   $(document).on('videosequence:initialize', initializeMediasequences);
   $(document).on('audiosequence:initialize', initializeMediasequences);
 })(jQuery);
