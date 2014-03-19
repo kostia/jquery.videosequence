@@ -57,36 +57,13 @@ $(document).trigger('audiosequence:initialize');
 
 ## Testing
 
-### Setup
-
-* Install Node.js. For example with Homebrew (http://brew.sh/).
-
-```bash
-brew install nodejs
-```
-
-* Install NPM modules
+### Specs
 
 ```bash
 npm install
 npm install -g bower
-npm install -g jasmine-jquery
-npm install -g jasmine-node
-```
-
-* Install Bower components
-
-```bash
 bower install
-```
-
-### Specs
-
-The unit specs are run in the Tranis-CI.
-Please make sure they all pass before submitting a pull-request.
-
-```bash
-jasmine-node test/spec/
+npm test
 ```
 
 ### Integration
