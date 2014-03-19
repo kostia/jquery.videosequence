@@ -18,7 +18,7 @@
     "sequence"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/kostia/jquery.videosequence",
+  "homepage": "http://kostia.github.io/jquery.videosequence",
   "ignore": [
     "**/.*",
     "node_modules",
