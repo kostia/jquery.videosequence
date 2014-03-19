@@ -1,0 +1,39 @@
+{
+  "name": "videosequence",
+  "title": "jQuery Videosequence",
+  "description": "jQuery plugin for creating video and audio sequences with media source extensions.",
+  "keywords": [
+    "audio",
+    "audiosequence",
+    "extensions",
+    "media",
+    "mse",
+    "sequence",
+    "source",
+    "video",
+    "videosequence"
+  ],
+  "version": "0.0.6",
+  "author": {
+    "name": "Kostiantyn Kahanskyi",
+    "email": "kostiantyn.kahanskyi@googlemail.com"
+  },
+  "maintainers": [
+    {
+      "name": "Kostiantyn Kahanskyi",
+      "email": "kostiantyn.kahanskyi@googlemail.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kostia/jquery.videosequence/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "http://kostia.github.io/jquery.videosequence",
+  "docs": "http://kostia.github.io/jquery.videosequence",
+  "bugs": "https://github.com/kostia/jquery.videosequence/issues",
+  "dependencies": {
+    "jquery": ">=1.8.3"
+  }
+}
