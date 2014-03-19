@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="jQuery Videosequence : jQuery plugin for creating video and audio sequences with media source extensions" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>jQuery Videosequence</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kostia/jquery.videosequence">View on GitHub</a>
+
+          <h1 id="project_title">jQuery Videosequence</h1>
+          <h2 id="project_tagline">jQuery plugin for creating video and audio sequences with media source extensions</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kostia/jquery.videosequence/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kostia/jquery.videosequence/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="jqueryvideosequence" class="anchor" href="#jqueryvideosequence"><span class="octicon octicon-link"></span></a>jquery.videosequence</h1>
+
+<p><a href="https://travis-ci.org/kostia/jquery.videosequence"><img src="https://travis-ci.org/kostia/jquery.videosequence.png" alt="Build Status"></a></p>
+
+<p>jQuery plugin for creating video and audio sequences with <a href="https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html">media source extensions</a>.</p>
+
+<p><img src="https://raw.github.com/kostia/jquery.videosequence/master/counter.png" alt="Counter"></p>
+
+<h2>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>To avoid stress, please read before using <a href="http://wiki.webmproject.org/adaptive-streaming/instructions-to-playback-a-webm-dash-presentation">http://wiki.webmproject.org/adaptive-streaming/instructions-to-playback-a-webm-dash-presentation</a>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>bower install jquery.videosequence
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>With JavaScript:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'video'</span><span class="p">).</span><span class="nx">videosequence</span><span class="p">([</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/video-1.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">0</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/video-2.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">10</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/video-3.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">20</span><span class="p">}</span>
+<span class="p">]);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'audio'</span><span class="p">).</span><span class="nx">audiosequence</span><span class="p">([</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/audio-1.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">0</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/audio-2.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">10</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">source</span><span class="o">:</span> <span class="s1">'/audio-3.webm'</span><span class="p">,</span> <span class="nx">timestampOffset</span><span class="o">:</span> <span class="mi">20</span><span class="p">}</span>
+<span class="p">]);</span>
+</pre></div>
+
+<p>Or with <code>data-*</code> attributes:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;video</span> <span class="na">data-rel=</span><span class="s">'videosequence'</span>
+    <span class="na">data-videosequence-sources=</span><span class="s">'["video-1.webm","video-2.webm","video-3.webm"]'</span>
+    <span class="na">data-videosequence-offsets=</span><span class="s">'[0,10,20]'</span><span class="nt">&gt;&lt;/video&gt;</span>
+
+<span class="nt">&lt;audio</span> <span class="na">data-rel=</span><span class="s">"audiosequence"</span>
+    <span class="na">data-audiosequence-sources=</span><span class="s">'["audio-1.webm","audio-2.webm","audio-3.webm"]'</span>
+    <span class="na">data-audiosequence-offsets=</span><span class="s">'[0,10,20]'</span><span class="nt">&gt;&lt;/audio&gt;</span>
+</pre></div>
+
+<p>Normally the initialization with <code>data-*</code> attrs is started on <code>ready</code> (<a href="http://api.jquery.com/ready/">http://api.jquery.com/ready/</a>).
+But you can also start the initialization manually:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'videosequence:initialize'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'audiosequence:initialize'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<h3>
+<a name="specs" class="anchor" href="#specs"><span class="octicon octicon-link"></span></a>Specs</h3>
+
+<div class="highlight highlight-bash"><pre>npm install
+npm install -g bower
+bower install
+npm <span class="nb">test</span>
+</pre></div>
+
+<h3>
+<a name="integration" class="anchor" href="#integration"><span class="octicon octicon-link"></span></a>Integration</h3>
+
+<p>Since MSE is still a  bleeding edge technology, there is no way to actually assert that it works,
+except to try it out in a browser.</p>
+
+<p>The integration specs are <strong>not</strong> run in the Tranis-CI.
+Please make sure they all pass in your browser before submitting a pull-request.</p>
+
+<ul>
+<li>Go to <code>test/integration</code>.</li>
+<li>Start test app server with <code>node app.js</code>.</li>
+<li>Open <a href="http://localhost:3000/test.html">http://localhost:3000</a> in a browser supporting media source extensions.</li>
+<li>You should see a movie counter starting with 5 and counting down to 2 and at 1 it should display an alert.</li>
+<li>You should also hear the corresponding beeping sound.</li>
+<li>Then after an alert saying "Now audio!" you should hear 5 times only the sound.</li>
+<li>After the 5th beeping sound a second alerts says "Done!".</li>
+</ul><h2>
+<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
+
+<div class="highlight highlight-bash"><pre>npm install -g gulp
+gulp build
+</pre></div>
+
+<h2>
+<a name="mit-license" class="anchor" href="#mit-license"><span class="octicon octicon-link"></span></a>MIT-License</h2>
+
+<p>Copyright 2014 Kostiantyn Kahanskyi</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jQuery Videosequence maintained by <a href="https://github.com/kostia">kostia</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
